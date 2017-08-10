@@ -12,6 +12,8 @@
 		B55CDA771F3CB15C00DBF1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CDA751F3CB15C00DBF1F0 /* Main.storyboard */; };
 		B55CDA791F3CB15C00DBF1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55CDA781F3CB15C00DBF1F0 /* Assets.xcassets */; };
 		B55CDA7C1F3CB15C00DBF1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CDA7A1F3CB15C00DBF1F0 /* LaunchScreen.storyboard */; };
+		B55CDA841F3CB29B00DBF1F0 /* ComplexNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA831F3CB29B00DBF1F0 /* ComplexNumber.swift */; };
+		B55CDA861F3CE69D00DBF1F0 /* MandelbrotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA851F3CE69D00DBF1F0 /* MandelbrotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B55CDA781F3CB15C00DBF1F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B55CDA7B1F3CB15C00DBF1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B55CDA7D1F3CB15C00DBF1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55CDA831F3CB29B00DBF1F0 /* ComplexNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexNumber.swift; sourceTree = "<group>"; };
+		B55CDA851F3CE69D00DBF1F0 /* MandelbrotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandelbrotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				B55CDA711F3CB15C00DBF1F0 /* AppDelegate.swift */,
 				B55CDA731F3CB15C00DBF1F0 /* ViewController.swift */,
+				B55CDA831F3CB29B00DBF1F0 /* ComplexNumber.swift */,
+				B55CDA851F3CE69D00DBF1F0 /* MandelbrotView.swift */,
 				B55CDA751F3CB15C00DBF1F0 /* Main.storyboard */,
 				B55CDA781F3CB15C00DBF1F0 /* Assets.xcassets */,
 				B55CDA7A1F3CB15C00DBF1F0 /* LaunchScreen.storyboard */,
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55CDA741F3CB15C00DBF1F0 /* ViewController.swift in Sources */,
+				B55CDA841F3CB29B00DBF1F0 /* ComplexNumber.swift in Sources */,
+				B55CDA861F3CE69D00DBF1F0 /* MandelbrotView.swift in Sources */,
 				B55CDA721F3CB15C00DBF1F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
