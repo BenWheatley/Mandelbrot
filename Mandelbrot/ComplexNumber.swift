@@ -8,6 +8,14 @@
 
 import Foundation
 
+/**
+Implements complex numbers.
+
+Uses Double internaly, not generic, as using generics prevents:
+1) 'static let' from working
+2) calculating argument of polar form calls atan(Double) etc, which are not themselves generic
+(Float would require atanf(Float) etc.)
+*/
 struct Complex: Equatable {
 	
 	static let 𝒊 = Complex(r: 0, i: 1)
