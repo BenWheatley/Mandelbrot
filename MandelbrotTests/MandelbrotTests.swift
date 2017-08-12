@@ -41,27 +41,23 @@ class MandelbrotTests: XCTestCase {
 		complexNum2 += complexNum2
 		XCTAssertEqual(realNum, complexNum.abs())
 		XCTAssert(complexNum.i == 0)
-		XCTAssert(realNum2 == complexNum.abs())
+		XCTAssert(realNum2 == complexNum2.abs())
 		
 		realNum2 *= realNum2
 		complexNum2 *= complexNum2
 		
-		XCTAssertEqual(realNum, complexNum.abs())
-		XCTAssert(complexNum.i == 0)
-		XCTAssert(realNum2 == complexNum.abs())
+		XCTAssert(realNum2 == complexNum2.abs())
 		
 		realNum2 /= realNum2
 		complexNum2 /= complexNum2
 		
-		XCTAssertEqual(realNum, complexNum.abs())
-		XCTAssert(complexNum.i == 0)
-		XCTAssert(realNum2 == complexNum.abs())
+		XCTAssert(realNum2 == complexNum2.abs())
 		XCTAssertNotEqual(3, Complex(r: 0, i: 3).r)
 		
 		let complexNum3 = Complex(r: 0, i: 3)
-		let complexNum4 = Complex(r: 0, i: 1)
-		XCTAssertNotEqual(complexNum3, complexNum4)
-		XCTAssertEqual(complexNum3*complexNum4, Complex(r: -3, i: 0))
+		XCTAssertNotEqual(complexNum3, .𝒊)
+		XCTAssertEqual(complexNum3 * .𝒊, Complex(r: -3, i: 0))
+		XCTAssertEqual(.𝒊 * .𝒊, Complex(r: -1, i: 0))
 	}
 	
     func testPerformanceExample() {

@@ -9,6 +9,9 @@
 import Foundation
 
 struct Complex: Equatable {
+	
+	static let 𝒊 = Complex(r: 0, i: 1)
+	
 	var r: Double
 	var i: Double
 	
