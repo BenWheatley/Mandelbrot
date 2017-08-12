@@ -9,7 +9,9 @@
 import Foundation
 
 /**
-Implements complex numbers.
+Implements complex numbers. Only written as practice for automatic testing and swift
+(more fun than random lecture notes), find a better implementation of Complex numbers
+if you really want them — this is reinventing the wheel!
 
 Uses Double internaly, not generic, as using generics prevents:
 1) 'static let' from working
