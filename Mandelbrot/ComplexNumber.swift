@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Complex {
+struct Complex: Equatable {
 	var r: Double
 	var i: Double
 	
@@ -53,14 +53,6 @@ struct Complex {
 		lhs = lhs / rhs
 	}
 	
-	static public func ==(lhs: Complex, rhs: Complex) -> Bool {
-		return lhs.r==rhs.r && lhs.i==rhs.i
-	}
-	
-	static public func !=(lhs: Complex, rhs: Complex) -> Bool {
-		return (lhs.r != rhs.r) || (lhs.i != rhs.i)
-	}
-	
 	// Special complex functions
 	
 	public func conj() -> Complex {
@@ -98,5 +90,10 @@ struct Complex {
 			return Double.nan
 		}
 	}
-	
+}
+
+// Equality tests need to be defined outside the struct's {}
+
+func ==(lhs: Complex, rhs: Complex) -> Bool {
+	return lhs.r==rhs.r && lhs.i==rhs.i
 }
