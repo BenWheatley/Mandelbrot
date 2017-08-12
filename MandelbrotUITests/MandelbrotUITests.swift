@@ -33,45 +33,6 @@ class MandelbrotUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 	}
 	
-	func testComplexNumbers() {
-		let realNum: Double = 3
-		let complexNum = Complex(r: realNum, i: 0)
-		XCTAssertEqual(realNum, complexNum.abs())
-		XCTAssert(complexNum.i == 0)
-		XCTAssertEqual(realNum+realNum, (complexNum+complexNum).abs())
-		XCTAssertEqual(realNum-realNum, (complexNum-complexNum).abs())
-		XCTAssertEqual(realNum*realNum, (complexNum*complexNum).abs())
-		XCTAssertEqual(realNum/realNum, (complexNum/complexNum).abs())
-		
-		var realNum2 = realNum
-		var complexNum2 = complexNum
-		realNum2 += realNum2
-		complexNum2 += complexNum2
-		XCTAssertEqual(realNum, complexNum.abs())
-		XCTAssert(complexNum.i == 0)
-		XCTAssert(realNum2 == complexNum.abs())
-		
-		realNum2 *= realNum2
-		complexNum2 *= complexNum2
-		
-		XCTAssertEqual(realNum, complexNum.abs())
-		XCTAssert(complexNum.i == 0)
-		XCTAssert(realNum2 == complexNum.abs())
-		
-		realNum2 /= realNum2
-		complexNum2 /= complexNum2
-		
-		XCTAssertEqual(realNum, complexNum.abs())
-		XCTAssert(complexNum.i == 0)
-		XCTAssert(realNum2 == complexNum.abs())
-		XCTAssertNotEqual(3, Complex(r: 0, i: 3).r)
-		
-		let complexNum3 = Complex(r: 0, i: 3)
-		let complexNum4 = Complex(r: 0, i: 1)
-		XCTAssertNotEqual(complexNum3, complexNum4)
-		XCTAssertEqual(complexNum3*complexNum4, Complex(r: -3, i: 0))
-    }
-	
 	func testPerformanceExample() {
 		self.measure() {
 			let v = MandelbrotView()
