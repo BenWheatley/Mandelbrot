@@ -21,13 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-hY-ctm" customClass="MandelbrotView" customModule="Mandelbrot" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ad9-hY-ctm" customClass="MandelbrotView" customModule="Mandelbrot" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ad9-hY-ctm" secondAttribute="trailing" id="JhI-gc-Tl3"/>
+                            <constraint firstItem="ad9-hY-ctm" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="LJg-rB-MVL"/>
+                            <constraint firstItem="ad9-hY-ctm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z8A-rJ-C8D"/>
+                            <constraint firstItem="ad9-hY-ctm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r9G-ys-34Y"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mandelbrotView" destination="ad9-hY-ctm" id="0PY-lz-f6I"/>

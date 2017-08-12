@@ -11,27 +11,25 @@ import UIKit
 @IBDesignable
 class MandelbrotView: UIView {
 
-	@IBInspectable var scale: CGFloat = 1 { didSet { setNeedsDisplay() } }
+	@IBInspectable var scale: Double = 100 { didSet { setNeedsDisplay() } }
 	
     override func draw(_ rect: CGRect) {
         // Drawing code
 		
-		let rez = 100.0
-		
-		for real in stride(from: Double(-2), to: Double(2), by: 1.0/rez) {
-			for imag in stride(from: Double(-2), to: Double(2), by: 1.0/rez) {
+		for y in 0..<Int(rect.height) {
+			for x in 0..<Int(rect.width) {
 				
-				let (x, y) = ( (real+2)*rez, (imag+2)*rez )
+				let (real, imag) = (-2 + Double(x)/scale, -2 + Double(y)/scale)
 				var difficulty: Int = 0
 				let c = Complex(r: real, i: imag)
 				var z = Complex(r: 0, i: 0)
-				let MAX_DIFFICULTY = 256
-				while difficulty<MAX_DIFFICULTY && z.abs()<2 {
+				let MAX_DIFFICULTY = 16
+				while difficulty<MAX_DIFFICULTY && z.absSquared()<=4 {
 					z = z*z + c
 					difficulty = difficulty+1
 				}
 				
-				let path = UIBezierPath(rect: CGRect(x: Int(x), y: Int(y), width: Int(rez), height: Int(rez)))
+				let path = UIBezierPath(rect: CGRect(x: Int(x), y: Int(y), width: Int(scale), height: Int(scale)))
 				UIColor(white: CGFloat(difficulty)/CGFloat(MAX_DIFFICULTY), alpha: 1).setFill()
 				UIColor.blue.setStroke()
 				path.fill()

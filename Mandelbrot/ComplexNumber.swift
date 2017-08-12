@@ -73,6 +73,10 @@ struct Complex {
 		return sqrt(i*i + r*r)
 	}
 	
+	public func absSquared() -> Double {
+		return i*i + r*r
+	}
+	
 	public func arg() -> Double {
 		switch r {
 		case _ where r>0:
