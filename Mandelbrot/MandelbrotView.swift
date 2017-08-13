@@ -31,7 +31,6 @@ class MandelbrotView: UIView {
 				
 				let path = UIBezierPath(rect: CGRect(x: Int(x), y: Int(y), width: Int(scale), height: Int(scale)))
 				UIColor(white: CGFloat(difficulty)/CGFloat(MAX_DIFFICULTY), alpha: 1).setFill()
-				UIColor.blue.setStroke()
 				path.fill()
 			}
 		}
