@@ -65,6 +65,8 @@ class MandelbrotView: UIView {
 		switch recognizer.state {
 		case .changed, .ended:
 			scale *= Double(recognizer.scale)
+			offset_x *= recognizer.scale
+			offset_y *= recognizer.scale
 			recognizer.scale = 1
 		default: break
 		}
