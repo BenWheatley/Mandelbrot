@@ -12,6 +12,8 @@ import UIKit
 class MandelbrotView: UIView {
 
 	@IBInspectable var scale: Double = 100 { didSet { setNeedsDisplay() } }
+	@IBInspectable var offset_x: CGFloat = 0 { didSet { setNeedsDisplay() } }
+	@IBInspectable var offset_y: CGFloat = 0 { didSet { setNeedsDisplay() } }
 	
     override func draw(_ rect: CGRect) {
         // Drawing code
@@ -19,17 +21,24 @@ class MandelbrotView: UIView {
 		let dataPointer = UnsafeMutablePointer<UInt32>.allocate(capacity: Int(rect.height)*Int(rect.width))
 		var pixel = 0
 		
+		let (halfWidth, halfHeight) = (rect.width/2, rect.height/2)
+		
+		let MAX_DIFFICULTY: UInt32 = UInt32(16 + scale/100.0)
+		
 		for y in 0..<Int(rect.height) {
 			for x in 0..<Int(rect.width) {
-				
-				let (real, imag) = (-2 + Double(x)/scale, -2 + Double(y)/scale)
+		
+				let (real, imag) = (Double(CGFloat(x)-halfWidth-offset_x)/scale, Double(CGFloat(y)-halfHeight+offset_y)/scale)
 				var difficulty: UInt32 = 0
 				let c = Complex(r: real, i: imag)
 				var z = Complex(r: 0, i: 0)
-				let MAX_DIFFICULTY: UInt32 = 16
-				while difficulty<MAX_DIFFICULTY && z.absSquared()<=4 {
+				while z.absSquared()<=4 {
 					z = z*z + c
-					difficulty = difficulty+1
+					difficulty += 1
+					if (difficulty>=MAX_DIFFICULTY) {
+						difficulty = 0
+						break
+					}
 				}
 				
 				difficulty <<= 4
@@ -50,6 +59,25 @@ class MandelbrotView: UIView {
 				UIGraphicsGetCurrentContext()?.draw(bitMapImage, in: self.bounds)
 			}
 		}
-    }
+	}
+	
+	@objc public func changeScale(recognizer: UIPinchGestureRecognizer) {
+		switch recognizer.state {
+		case .changed, .ended:
+			scale *= Double(recognizer.scale)
+			recognizer.scale = 1
+		default: break
+		}
+	}
+	
+	@objc public func changePosition(recognizer: UIPanGestureRecognizer) {
+		switch recognizer.state {
+		case .changed, .ended:
+			offset_x += recognizer.translation(in: self).x
+			offset_y += recognizer.translation(in: self).y
+			recognizer.setTranslation(CGPoint(x: 0, y: 0), in: self)
+		default: break
+		}
+	}
 
 }
