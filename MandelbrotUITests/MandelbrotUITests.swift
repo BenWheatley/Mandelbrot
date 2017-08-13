@@ -38,13 +38,6 @@ class MandelbrotUITests: XCTestCase {
 			let v = MandelbrotView()
 			let rect = CGRect(x: 0, y: 0, width: 300, height: 300)
 			
-/*			let contextRef = CGContext.init(data: nil,
-			                                width: Int(rect.width),
-			                                height: Int(rect.height),
-			                                bitsPerComponent: 8,
-			                                bytesPerRow: 0,
-			                                space: CGColorSpace(name: CGColorSpace.genericRGBLinear)!,
-			                                bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)*/
 			let renderer = UIGraphicsImageRenderer(size: rect.size)
 			let _ = renderer.image { (context) in
 				v.draw(rect)

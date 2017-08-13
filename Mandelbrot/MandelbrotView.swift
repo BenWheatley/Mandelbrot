@@ -34,16 +34,22 @@ class MandelbrotView: UIView {
 				
 				difficulty <<= 4
 				
-				dataPointer[pixel] = difficulty | difficulty<<8 | difficulty<<16
+				dataPointer[pixel] = difficulty | difficulty<<8 | difficulty<<16 | 0xFF000000
 				pixel += 1
-				
-//				let path = UIBezierPath(rect: CGRect(x: Int(x), y: Int(y), width: Int(scale), height: Int(scale)))
-//				UIColor(white: CGFloat(difficulty)/CGFloat(MAX_DIFFICULTY), alpha: 1).setFill()
-//				path.fill()
 			}
 		}
 		
-		
+		if let contextRef = CGContext.init(data: dataPointer,
+										width: Int(rect.width),
+										height: Int(rect.height),
+										bitsPerComponent: 8,
+										bytesPerRow: Int(rect.width)*4,
+										space: CGColorSpace(name: CGColorSpace.genericRGBLinear)!,
+										bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
+			if let bitMapImage = contextRef.makeImage() {
+				UIGraphicsGetCurrentContext()?.draw(bitMapImage, in: self.bounds)
+			}
+		}
     }
 
 }
