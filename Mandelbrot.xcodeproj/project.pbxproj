@@ -17,6 +17,8 @@
 		B532A1591F3F66EF00C2A118 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA731F3CB15C00DBF1F0 /* ViewController.swift */; };
 		B532A15A1F3F66EF00C2A118 /* ComplexNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA831F3CB29B00DBF1F0 /* ComplexNumber.swift */; };
 		B532A15B1F3F66EF00C2A118 /* MandelbrotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA851F3CE69D00DBF1F0 /* MandelbrotView.swift */; };
+		B532A15D1F41996300C2A118 /* Screen Shot 2017-08-14 at 09.36.24.png in Resources */ = {isa = PBXBuildFile; fileRef = B532A15C1F41996300C2A118 /* Screen Shot 2017-08-14 at 09.36.24.png */; };
+		B532A15F1F4242CC00C2A118 /* Double precision limit.png in Resources */ = {isa = PBXBuildFile; fileRef = B532A15E1F4242CC00C2A118 /* Double precision limit.png */; };
 		B55CDA721F3CB15C00DBF1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA711F3CB15C00DBF1F0 /* AppDelegate.swift */; };
 		B55CDA741F3CB15C00DBF1F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CDA731F3CB15C00DBF1F0 /* ViewController.swift */; };
 		B55CDA771F3CB15C00DBF1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CDA751F3CB15C00DBF1F0 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		B532A14E1F3F66D600C2A118 /* MandelbrotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MandelbrotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B532A1501F3F66D600C2A118 /* MandelbrotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MandelbrotTests.swift; sourceTree = "<group>"; };
 		B532A1521F3F66D600C2A118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B532A15C1F41996300C2A118 /* Screen Shot 2017-08-14 at 09.36.24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-08-14 at 09.36.24.png"; sourceTree = "<group>"; };
+		B532A15E1F4242CC00C2A118 /* Double precision limit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double precision limit.png"; sourceTree = "<group>"; };
 		B55CDA6E1F3CB15C00DBF1F0 /* Mandelbrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandelbrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55CDA711F3CB15C00DBF1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B55CDA731F3CB15C00DBF1F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		B55CDA651F3CB15C00DBF1F0 = {
 			isa = PBXGroup;
 			children = (
+				B532A15E1F4242CC00C2A118 /* Double precision limit.png */,
+				B532A15C1F41996300C2A118 /* Screen Shot 2017-08-14 at 09.36.24.png */,
 				B55CDA701F3CB15C00DBF1F0 /* Mandelbrot */,
 				B532A1391F3F512A00C2A118 /* MandelbrotUITests */,
 				B532A14F1F3F66D600C2A118 /* MandelbrotTests */,
@@ -261,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55CDA7C1F3CB15C00DBF1F0 /* LaunchScreen.storyboard in Resources */,
+				B532A15D1F41996300C2A118 /* Screen Shot 2017-08-14 at 09.36.24.png in Resources */,
 				B55CDA791F3CB15C00DBF1F0 /* Assets.xcassets in Resources */,
+				B532A15F1F4242CC00C2A118 /* Double precision limit.png in Resources */,
 				B55CDA771F3CB15C00DBF1F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
