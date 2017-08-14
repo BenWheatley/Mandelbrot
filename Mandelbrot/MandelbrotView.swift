@@ -15,6 +15,26 @@ class MandelbrotView: UIView {
 	@IBInspectable var offset_x: CGFloat = 0 { didSet { setNeedsDisplay() } }
 	@IBInspectable var offset_y: CGFloat = 0 { didSet { setNeedsDisplay() } }
 	
+	static let CLUT: [UInt32] = { () -> [UInt32] in
+		var CLUT: [UInt32] = []
+		for i in 0..<0xFF {
+			CLUT.append(UInt32(i))
+		}
+		for i in 0..<0xFF {
+			CLUT.append(UInt32(i<<8 | 0xFF))
+		}
+		for i in 0..<0xFF {
+			CLUT.append(UInt32(i<<16 | (0xFFFF)))
+		}
+		for i in 0..<0xFF {
+			CLUT.append(UInt32(0xFF-i | (0xFFFF00)))
+		}
+		for i in 0..<0xFF {
+			CLUT.append(UInt32((0xFF-i)<<8 | (0xFF0000)))
+		}
+		return CLUT
+	}()
+	
     override func draw(_ rect: CGRect) {
         // Drawing code
 		
@@ -44,6 +64,7 @@ class MandelbrotView: UIView {
 					}
 				}
 				
+				difficulty %= 0xF
 				difficulty <<= 4
 				
 				dataPointer[pixel] = difficulty | difficulty<<8 | difficulty<<16 | 0xFF000000
