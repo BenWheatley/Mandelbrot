@@ -23,7 +23,10 @@ class MandelbrotView: UIView {
 		
 		let (halfWidth, halfHeight) = (rect.width/2, rect.height/2)
 		
-		let MAX_DIFFICULTY: UInt32 = UInt32(16 + scale/100.0)
+		// This mess is to prevent fatal error on overflow
+		// ("Double value cannot be converted to UInt32 because the result would be greater than UInt32.max")
+		let floatMaxDifficulty = 16 + scale/100.0
+		let MAX_DIFFICULTY: UInt32 = UInt32(min(Double(UInt32.max), floatMaxDifficulty))
 		
 		for y in 0..<Int(rect.height) {
 			for x in 0..<Int(rect.width) {
