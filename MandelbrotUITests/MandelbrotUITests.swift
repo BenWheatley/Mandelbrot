@@ -28,9 +28,26 @@ class MandelbrotUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testThatPinchAndPanWork() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+		
+		let element = XCUIApplication().children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
+		element.swipeRight()
+		element.swipeRight()
+		element.swipeUp()
+		element.swipeRight()
+		element.swipeUp()
+		element.swipeRight()
+		element.swipeRight()
+		element.swipeRight()
+		element.swipeRight()
+		element.swipeUp()
+		element.swipeRight()
+		element.swipeLeft()
+		
+		// I'm not sure what to actually test in this case.
+		// I could compare pixel values to a recording, but I'm not sure that demonstrates anything is *correct*, only that it's what it was before.
 	}
 	
 	func testPerformanceExample() {
